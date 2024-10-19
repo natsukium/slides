@@ -98,6 +98,12 @@
           watch-script = typixLib.watchTypstProject commonArgs;
         in
         {
+          legacyPackages = {
+            nix-meetup-1 = {
+              opening = build-drv ./contents/nix-meetup-1/opening;
+            };
+          };
+
           apps = {
             default = config.apps.watch;
             watch = {
