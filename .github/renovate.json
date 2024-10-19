@@ -1,0 +1,13 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["config:recommended"],
+	"timezone": "Asia/Tokyo",
+	"lockFileMaintenance": {
+		"enabled": true
+	},
+	"automerge": true,
+	"automergeStrategy": "rebase",
+	"nix": {
+		"enabled": true
+	}
+}
