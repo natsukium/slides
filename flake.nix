@@ -84,7 +84,14 @@
               // {
                 src = typixLib.cleanTypstSource src;
                 virtualPaths = [ src ];
-                env.XDG_CACHE_HOME = typstPackagesCache;
+                env = lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
+                  XDG_CACHE_HOME = typstPackagesCache;
+                };
+                preBuild = lib.optionalString pkgs.stdenv.hostPlatform.isDarwin ''
+                  export HOME=$TMPDIR
+                  mkdir -p $HOME/Library/Caches
+                  cp -r ${typstPackagesCache}/typst $HOME/Library/Caches
+                '';
               }
             );
 
