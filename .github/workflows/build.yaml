@@ -19,4 +19,21 @@ jobs:
       - name: check
         run: nix flake check
       - name: build
-        run: nix build -L .#nix-meetup-1.opening
+        run: nix build -L
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: result
+  deploy-gh-pages:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: deploy to gh pages
+        id: deployment
+        uses: actions/deploy-pages@v4
