@@ -104,6 +104,11 @@
             };
           };
 
+          packages.default = pkgs.runCommandNoCCLocal "slides" { } ''
+            mkdir -p $out/nix-meetup-1
+            cp ${config.legacyPackages.nix-meetup-1.opening} $out/nix-meetup-1/opening
+          '';
+
           apps = {
             default = config.apps.watch;
             watch = {
