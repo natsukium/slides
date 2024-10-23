@@ -20,7 +20,6 @@
   config-info(
     title: [Nix meetup \#1],
     subtitle: [オープニング],
-    author: [natsukium],
     date: [2024-10-26],
     institution: [Nix日本語コミュニティ],
     logo: image("./assets/nix-snowflake.svg", width: 40%),
@@ -73,9 +72,10 @@
 
 = 会場説明
 
-=
+= オープニングセッション
 
 ==
+
 - Nix を使ったことがある人
 
 #pause
@@ -90,31 +90,51 @@
 
 - Home Manager や Nix Darwin を使っている人
 
+= Nix meetup 開催の経緯
+
+== Tokyo NixOS
+
+Nix の勉強会に参加したことがありますか？
+
+#pause
+
+#link("https://www.meetup.com/tokyo-nixos-meetup")[Tokyo NixOS]
+
+最終活動日 2018-06-23
+
+#focus-slide[
+  6 年振りの開催！
+]
+
+== 参加者統計
+
+#slide[
+  #table(
+    columns: (auto, auto),
+    inset: 10pt,
+    align: horizon,
+    fill: (_, y) => if y == 0 {
+      gray
+    },
+    table.header(
+      [年数],
+      [人数],
+    ),
+
+    "1年未満", "52人",
+    "1~5年", "13人",
+    "5年以上", "2人",
+  )
+][
+  #pause
+  参加者の8割弱が1年未満のユーザー
+]
+
+== 海外のコミュニティ
+
+https://nixos.org/community/
+
 = 終わりに
-
-==
-
-気になることがあれば Nix 日本語コミュニティの Discord へ！
-
-まだ参加していない方はこちらからご参加ください
-
-#logo-qr-code(
-  "https://discord.com/invite/TYytzedtbe",
-  image("./assets/nix-snowflake.svg", width: 40%, height: 40%),
-  rect(width: 40%, height: 40%, fill: white),
-  size: 8cm,
-  options: (
-    option-1: 4,
-    output-options: (barcode-dotty-mode: true),
-    dot-size: 1.1,
-  ),
-)
-
-https://discord.com/invite/TYytzedtbe
-
-==
-
-Have fun!
 
 = タイムテーブル <touying:hidden>
 
@@ -148,3 +168,28 @@ Have fun!
     "18:10", "", "クロージング",
   )
 ]
+
+==
+
+気になることがあれば Nix 日本語コミュニティの Discord へ！
+
+まだ参加していない方はこちらからご参加ください
+
+#logo-qr-code(
+  "https://discord.com/invite/TYytzedtbe",
+  image("./assets/nix-snowflake.svg", width: 40%, height: 40%),
+  rect(width: 40%, height: 40%, fill: white),
+  size: 8cm,
+  options: (
+    option-1: 4,
+    output-options: (barcode-dotty-mode: true),
+    dot-size: 1.1,
+  ),
+)
+
+https://discord.com/invite/TYytzedtbe
+
+==
+
+Have fun!
+
