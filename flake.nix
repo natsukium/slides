@@ -111,6 +111,7 @@
             packages = [
               watch-script
               pkgs.zathura
+              pkgs.pympress
             ];
             shellHook = config.pre-commit.installationScript;
           };
