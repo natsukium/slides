@@ -16,7 +16,8 @@
 
 #show: metropolis-theme.with(
   aspect-ratio: "16-9",
-  footer: self => self.info.institution,
+  header-right: [],
+  footer: self => self.info.title,
   config-info(
     title: [Nix meetup \#1],
     subtitle: [オープニング],
@@ -38,11 +39,15 @@
 
 == 出席登録
 
+#slide(composer: (auto, auto))[
+  #align(
+    center,
+    [
+      connpass にて出席登録をお願いします
 
-#slide(composer: (1fr, auto))[
-  connpass にて出席登録をお願いします
-
-  #image("./assets/nix-snowflake.svg", alt: "test", width: 40%, height: 40%)
+      #image("./assets/connpass.png", width: 100%)
+    ],
+  )
 ][
 
 
@@ -90,21 +95,65 @@
 
 - Home Manager や Nix Darwin を使っている人
 
+---
+
+世界に目を向けると様々な国や地域で活発にミートアップが開催されている
+私個人の願いではあるが、このミートアップを継続していってこの会をそれらと並ぶ存在にしたい
+
 = Nix meetup 開催の経緯
 
-== Tokyo NixOS
+== Nixのイベント
 
-Nix の勉強会に参加したことがありますか？
+Nix の国際的なイベントの代表的なものに #link("https://2024.nixcon.org")[*NixCon*] がある
+
+nixcon は2015年からほぼ毎年欧州で行われているNix の公式のカンファレンスであり、
+今年は10月25日から27日までドイツのベルリンで開催される
 
 #pause
 
-#link("https://www.meetup.com/tokyo-nixos-meetup")[Tokyo NixOS]
+nixconに参加するためにベルリンに行くかこのNix meetupに参加するために東京に行くかで迷った人も多いのでは？
 
-最終活動日 2018-06-23
+== 海外のミートアップ
+
+#align(
+  center,
+  [
+    #image("./assets/discourse.png", height: 90%)
+
+    https://discourse.nixos.org/c/events/13
+  ],
+)
+
+---
+
+#align(
+  center,
+  [
+    #image("./assets/meetups.png", height: 90%)
+
+    https://nixos.org/community
+  ],
+)
+
+== 日本のミートアップ
+
+日本にも公式ページに乗るほどのコミュニティが存在している
+
+#pause
+
+#link("https://www.meetup.com/tokyo-nixos-meetup")[*Tokyo NixOS*]
+
+しかし Tokyo NixOS は2018年6月を最後に活動を停止している
 
 #focus-slide[
-  6 年振りの開催！
+  日本において 6 年振りの Nix イベントの開催！
 ]
+
+---
+
+大盛況
+
+= 本イベントの概要
 
 == 参加者統計
 
@@ -126,17 +175,11 @@ Nix の勉強会に参加したことがありますか？
     "5年以上", "2人",
   )
 ][
-  #pause
+  さて、今回のミートアップについて、なんと参加者の8割弱の方がNixの経験年数が1年未満であると回答があった
+  これほど多くの方が新たに
+
   参加者の8割弱が1年未満のユーザー
 ]
-
-== 海外のコミュニティ
-
-https://nixos.org/community/
-
-= 終わりに
-
-= タイムテーブル <touying:hidden>
 
 == タイムテーブル
 #text(size: 10pt)[
@@ -157,11 +200,11 @@ https://nixos.org/community/
     "13:30", "natsukium", "オープニング",
     "13:45", "asa1984", "Nix/NixOSの学習パスとNixのメンタルモデルについて",
     "14:05", "ShunDeveloper", "Nix初心者がGetting Startedしてみた的なことを話します",
-    "14:25", "sho19921005", "「NixOSライブインストール（仮）」",
+    "14:25", "", "",
     "14:45", "yasunori-kirin0418	", "nixの設定分割のやりかたと、dotfilesとの組合せについて",
     "15:05", "", "休憩",
     "15:25", "natsukium", "nixpkgsにコントリビュートしよう",
-    "15:45", "ROCKTAKEY", "GNU GuixとNixとの比較",
+    "15:45", "", "",
     "16:05", "ymgyt", "deploy-rsでNixをdeploy",
     "16:25", "_hiroqn", "社内ツール配布系",
     "16:40", "", "懇親会(軽食)",
@@ -169,25 +212,29 @@ https://nixos.org/community/
   )
 ]
 
-==
+== 質問や感想は Discord へ
 
 気になることがあれば Nix 日本語コミュニティの Discord へ！
 
 まだ参加していない方はこちらからご参加ください
 
-#logo-qr-code(
-  "https://discord.com/invite/TYytzedtbe",
-  image("./assets/nix-snowflake.svg", width: 40%, height: 40%),
-  rect(width: 40%, height: 40%, fill: white),
-  size: 8cm,
-  options: (
-    option-1: 4,
-    output-options: (barcode-dotty-mode: true),
-    dot-size: 1.1,
-  ),
-)
+#align(
+  center,
+  [#logo-qr-code(
+      "https://discord.com/invite/TYytzedtbe",
+      image("./assets/nix-snowflake.svg", width: 40%, height: 40%),
+      rect(width: 40%, height: 40%, fill: white),
+      size: 8cm,
+      options: (
+        option-1: 4,
+        output-options: (barcode-dotty-mode: true),
+        dot-size: 1.1,
+      ),
+    )
 
-https://discord.com/invite/TYytzedtbe
+    https://discord.com/invite/TYytzedtbe
+  ],
+)
 
 ==
 
