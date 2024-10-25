@@ -135,7 +135,13 @@
               hooks = {
                 actionlint.enable = true;
                 treefmt.enable = true;
-                typos.enable = true;
+                typos = {
+                  enable = true;
+                  excludes = [
+                    ".svg$"
+                  ];
+                  settings.configPath = "typos.toml";
+                };
               };
             };
           };
