@@ -127,6 +127,14 @@
 
 - Home Manager や nix-darwin を使っている人
 
+#pause
+
+- Nix をプロダクションに導入している人
+
+#pause
+
+- Nix を CI で使っている人
+
 ---
 
 = Nix meetup 開催の経緯
