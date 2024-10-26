@@ -46,7 +46,7 @@
 
 = Introduction <touying:hidden>
 
-== Introduction
+== 自己紹介
 
 #slide[
   #align(
@@ -72,8 +72,11 @@
   {
     name = "natsukium";
     job = [ "MLE" "SWE" ];
-    xxx = "NixOS/nixpkgs committer";
-    yyy = "nixpkgs python team";
+    hobby = [ "packaging" "cycling" ];
+    memberOf = [
+      "NixOS/nixpkgs committer"
+      "nixpkgs python team"
+    ];
   }
   ```
 
@@ -101,10 +104,6 @@
 ]
 
 == nixpkgs とは
-
-nixpkgs を使ったことがありますか？
-
-#pause
 
 #image("./assets/repology.svg")
 
@@ -149,49 +148,49 @@ https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md
 
 #pause
 - パッケージが一般的に使えるものであるか
-  - 開発初期段階のものやじきに放置されるもの
+  - 開発初期段階のものやじきに放棄されるものは受け入れられない
+
 #pause
 - ライセンスが明確であるか
   - ソースコードがオープンになっているからといって再配布が可能であるとは限らない
+
 #pause
 - 多くの人に使われうるものか
-  - 特定のプロジェクトに特化したヘルパーツールなど
+  - プライベートなプロジェクトのためのツールなどは受け入れられない
+
 #pause
-- メンテナンスする気があるか
+- メンテナンスできるか
   - 少なくとも1リリースサイクル(6ヶ月)はメンテするのが望ましい
 
 ---
 
+=== 追加の手順
+
 0. 少し長いが、 nixpkgs のCONTRIBUTION.md には必ず目を通しておく
-- ドキュメントの修正や新規項目の追加もよくあるので、定期的に見返すと良い
-- pkgs/README.md や 実装言語ごとのドキュメントにも目を通すのが望ましい
+  - ドキュメントの更新もよくあるため、定期的に見返すと良い
+  - pkgs/README.md や 実装言語ごとのドキュメントにも目を通すのが望ましい
 
 1. issue や PR を検索し、既に進行中のものがないか確認
 
 2. nixpkgs をクローンし、masterブランチから新しいブランチを切る
 
 3. パッケージを追加し、ビルドが通ることを確認
-- パッケージを追加するときには #link("https://github.com/nix-community/nix-init")[nix-init] を使うのが便利
+  - パッケージを追加するときには #link("https://github.com/nix-community/nix-init")[nix-init] を使うのが便利
+  - `nix-build -A attrname` でビルドできる
 
 #speaker-note[
   初めてのコントリビューションの際はもちろん、慣れてきた頃にも見返すとまた新たな発見があるはず。
   私のようにコミッターとしてnixpkgsに深く関わっていてもよく見返している
 ]
 
----
-
-=== メンテナーになる方法
-
-新規パッケージを追加する際には自分をメンテナーにすることが求められる
-
-
 == case2 古くなっているパッケージをアップデートしたい
 
-新規パッケージの追加と手順は同じ
+- 新規パッケージの追加と手順は同じ
 
-多くの場合、パッケージの追加よりもアップデートのほうが簡単なことが多い
+- 慣れるまでは PR を作成するたびにドキュメントを参照すると良い
 
-機械的にバージョンアップするだけでなく、changelogやdiffを確認すること
+- 多くの場合、パッケージの追加よりもアップデートのほうが簡単なことが多い
+  - 機械的にバージョンアップするだけでなく、changelogやdiffを確認すること
 
 #speaker-note[
 
@@ -201,6 +200,8 @@ https://github.com/NixOS/nixpkgs/blob/master/pkgs/README.md
 
 nix-update: パッケージのアップデートチェック、ハッシュの更新、コミットの生成など、
 nixpkgs-review
+
+---
 
 === 意図せずリビルドが多くなったら
 
@@ -217,12 +218,17 @@ git rebase --onto upstream/staging... upstream/master
 git push origin feature --force-with-lease
 ```
 
+ブランチ戦略は以下参照
+
+https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md#flow-of-merged-pull-requests
 
 == case3 壊れているパッケージを修正したい
 
 次のセクションで解説
 
 == Help! PRがレビューしてもらえない、どうしたらいい？
+
+#link("https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md#practical-contributing-advice")[CONTRIBUTING.md] を読もう
 
 = Zero Hydra Failure (ZHF)
 
