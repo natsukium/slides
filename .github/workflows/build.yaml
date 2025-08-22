@@ -20,7 +20,7 @@ jobs:
         run: nix flake check
       - name: build
         run: nix build -L
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: result
   deploy-gh-pages:
