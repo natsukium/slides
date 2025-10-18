@@ -102,12 +102,19 @@
             nix-meetup-1 = {
               opening = build-drv ./contents/nix-meetup-1/opening;
             };
+            nix-meetup-4 = {
+              opening = build-drv ./contents/nix-meetup-4/opening;
+            };
           };
 
           packages.default = pkgs.runCommandNoCCLocal "slides" { } ''
             mkdir -p $out/nix-meetup-1/opening
             cp ${config.legacyPackages.nix-meetup-1.opening} $out/nix-meetup-1/opening/main.pdf
             echo '<embed src="./main.pdf" width="100%" height="100%" type="application/pdf">' > $out/nix-meetup-1/opening/index.html
+
+            mkdir -p $out/nix-meetup-4/opening
+            cp ${config.legacyPackages.nix-meetup-4.opening} $out/nix-meetup-4/opening/main.pdf
+            echo '<embed src="./main.pdf" width="100%" height="100%" type="application/pdf">' > $out/nix-meetup-4/opening/index.html
           '';
 
           apps = {
