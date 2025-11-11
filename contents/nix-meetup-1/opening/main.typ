@@ -1,4 +1,4 @@
-#import "@preview/touying:0.5.3": *
+#import "@preview/touying:0.6.1": *
 #import "@preview/tiaoma:0.3.0": qrcode
 #import themes.metropolis: *
 
