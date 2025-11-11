@@ -1,5 +1,5 @@
 #import "@preview/touying:0.5.3": *
-#import "@preview/tiaoma:0.2.1": qrcode
+#import "@preview/tiaoma:0.3.0": qrcode
 #import themes.metropolis: *
 
 #let logo-qr-code(content, image, bg, size: auto, ..args) = {
