@@ -101,13 +101,16 @@
           legacyPackages = {
             nix-meetup-1 = {
               opening = build-drv ./contents/nix-meetup-1/opening;
+              nixpkgs = build-drv ./contents/nix-meetup-1/nixpkgs;
             };
           };
 
           packages.default = pkgs.runCommandNoCCLocal "slides" { } ''
-            mkdir -p $out/nix-meetup-1/opening
+            mkdir -p $out/nix-meetup-1/{opening,nixpkgs}
             cp ${config.legacyPackages.nix-meetup-1.opening} $out/nix-meetup-1/opening/main.pdf
+            cp ${config.legacyPackages.nix-meetup-1.nixpkgs} $out/nix-meetup-1/nixpkgs/main.pdf
             echo '<embed src="./main.pdf" width="100%" height="100%" type="application/pdf">' > $out/nix-meetup-1/opening/index.html
+            echo '<embed src="./main.pdf" width="100%" height="100%" type="application/pdf">' > $out/nix-meetup-1/nixpkgs/index.html
           '';
 
           apps = {
